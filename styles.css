@@ -10,6 +10,7 @@
 
   }
 
+
 h1, .h1{
     font-family: 'Nanum Myeongjo';
     font-weight: normal;
@@ -20,9 +21,15 @@ h2, .h2{
    font-weight: normal;
 }
 body{
-    height: 100vh;
+    background-image: url(./assets/images/2-blue-watercolor-paint-on-canvas-abstract-art-background-michal-bednarek.jpg); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-attachment: fixed;
 }
-
+p{
+    font-size: 3vw;
+    font-weight: 400;
+}
 
 
 section{
