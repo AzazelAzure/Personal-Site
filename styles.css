@@ -41,11 +41,6 @@ body{
     background-size: cover; 
     background-attachment: fixed;
 }
-p{
-    font-family: "Sarabun";
-    font-size: 2.75vw;
-    font-weight: 400;
-}
 
 
 section{
@@ -53,9 +48,23 @@ section{
     margin: 0;
 }
 
+.info{
+    font-family: "Sarabun";
+    font-size: 2.75vw;
+    font-weight: 400;
+}
+.icon{
+    height: 2vw;
+    width: 2vw;
+}
+
+.foot{
+    font-size: 2vw;
+}
 
 .pfp{
-    height: 200px;
+    height: 40vw;
+    max-height: 250px;
     border-radius: 80%;
 }
 .gradient-background {
