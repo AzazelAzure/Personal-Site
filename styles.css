@@ -10,6 +10,16 @@
 
   }
 
+@font-face {
+    font-family: "Sarabun";
+    src: url("./assets/Fonts/Sarabun/Sarabun-Light.ttf");
+}
+
+@font-face {
+    font-family: "Zilla Slab";
+    src: url("./assets/Fonts/Zilla_Slab/ZillaSlab-Bold.ttf");
+}
+
 
 h1, .h1{
     font-family: 'Nanum Myeongjo';
@@ -20,6 +30,11 @@ h2, .h2{
    font-family: 'Quicksand';
    font-weight: normal;
 }
+
+h3{
+    font-family: "Zilla Slab";
+}
+
 body{
     background-image: url(./assets/images/2-blue-watercolor-paint-on-canvas-abstract-art-background-michal-bednarek.jpg); 
     background-repeat: no-repeat; 
@@ -27,7 +42,8 @@ body{
     background-attachment: fixed;
 }
 p{
-    font-size: 3vw;
+    font-family: "Sarabun";
+    font-size: 2.75vw;
     font-weight: 400;
 }
 
