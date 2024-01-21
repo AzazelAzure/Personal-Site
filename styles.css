@@ -1,0 +1,42 @@
+
+@font-face {
+    font-family: "Nanum Myeongjo";
+    src: url("./assets/Fonts/Nanum_Myeongjo/NanumMyeongjo-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: "Quicksand";
+    src: url("./assets/Fonts/Quicksand/Quicksand-VariableFont_wght.ttf");
+
+  }
+
+h1, .h1{
+    font-family: 'Nanum Myeongjo';
+    font-weight: normal;
+}
+
+h2, .h2{
+   font-family: 'Quicksand';
+   font-weight: normal;
+}
+body{
+    height: 100vh;
+}
+
+
+
+section{
+    padding: 0;
+    margin: 0;
+}
+
+
+.pfp{
+    height: 200px;
+    border-radius: 80%;
+}
+.gradient-background {
+    background: linear-gradient(300deg, #1FBDED, #6F1FED, #B82EF0);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+}
