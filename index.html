@@ -22,13 +22,13 @@
     <title>Patrick Proctor</title>
 </head>
 <body class="d-flex flex-column min-vh-100 justify-content-between">
-    <section id="Heading">
-        <div class="container-fluid text-center">
-            <div class="row flex-md-row-reverse justify-content-evenly align-items-center align-content-center">                
-                <div class="col-md-3 col-sm-12 mx-auto my-3">
+    <section id="Heading" style="height: 100vh; " class="d-flex align-items-center">
+        <div class="container-fluid text-center position-fixed">
+            <div class="row flex-md-row-reverse justify-content-evenly align-items-center align-content-center align-self-center">                
+                <div class="col-lg-6 col-md-3 col-sm-12 mx-auto my-3">
                     <img src="./assets/images/me.jpg" alt="" class="pfp border border-3 border-dark rounded-circle">
                 </div>
-                <div class="col-md-3 col-sm-12 mx-auto">
+                <div class="col-lg-6 col-md-3 col-sm-12 mx-auto">
                     <span class="border border-dark border-3 py-1">
                         <h1 class=" display-5 pt-5">Patrick Proctor</h1>
                         <img src="./assets/images/divider.png" alt="" width="200px">
@@ -39,37 +39,36 @@
         </div>
     </section>
 
-    <section id="About Me">
-        <div class="container">
-            <div id="myCarousel" class="carousel carousel-fade my-6 pt-5" data-bs-ride="carousel" >
+    <section id="About Me" style="height: 100vh; " class="d-flex align-items-center">
+        <div class="container d-flex justify-content-center align-content-stretch">
+            <div id="myCarousel" class="carousel carousel-fade my-6 pt-5 w-auto flex-grow-1" data-bs-ride="carousel" >
                 <div class="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="10000">
-                        <div class="container">
+                    <div class="carousel-item active" data-bs-interval="20000">
+                        <div class="container mh-100">
                             <div class="row text-center justify-content-center ">
-                                <div class="card col-8 col-sm-12 bg-transparent border-0 vh-75 w-100">
-                                    <img src="./assets/images/watercolor-4116932_1280.png" alt="" class="card-img" >
-                                    <div class="card-img-overlay">
+                                <div class="card col-12 about-card bg-opacity-50 border-2 border-info rounded-5 mh-100 w-100" style="height: 80vh;">
+                                    <img src="./assets/images/watercolor-4116932_1280.png" alt="" class="card-img" height="90%">
+                                    <div class="card-img-overlay h-100">
                                         <div class="card-title">
                                             <h3 class="display-4">
                                                 About Me
                                             </h3>
                                         </div>
                                         <div class="card-body text-start h-100 w-100 overflow-auto clearfix">
-                                            <img src="./assets/images/Vintage-Friendly-Boy.svg" alt="" class="float-start m-3" height="40%" width="40%">
+                                            <img src="./assets/images/Vintage-Friendly-Boy.svg" alt="" class="float-start m-3" height="30%" width="30%">
                                             <div class="card-text">
-                                            <p class="opacity-75 pb-3 info">
-                                                Lorem ipsum dolor sit amet, 
-                                                consectetur adipiscing elit. Mauris gravida risus lectus, non cursus dolor ornare sed. Curabitur sed eleifend dolor. 
-                                                Aliquam varius sem arcu, quis elementum tortor aliquam et. Sed scelerisque, enim non vestibulum molestie, justo erat egestas urna, dictum dictum ex arcu nec enim. 
-                                                Phasellus semper purus nec dolor finibus aliquet. Fusce bibendum egestas turpis vitae malesuada. Aliquam erat volutpat. Etiam cursus dui in velit ultricies aliquet. 
-                                                Etiam ac placerat sapien. Praesent a mauris tellus. In cursus, felis sit amet auctor feugiat, tortor nisl ullamcorper ante, a tempor turpis quam sed nunc. Nullam mi lorem, 
-                                                fringilla in nibh eu, fringilla facilisis ex. Nulla rutrum mauris nec interdum placerat.
-                                            </p>
+                                            <p class="pb-3 info">
+                                                Hello!  Welcome to my page!<br>
+                                                The first seeds of my love of coding were planted by the first ever coding class I took long ago.<br>  
+                                                Dabbling throughout the years with various languages, primarily java, I really took to design when I picked up my first book on Python.<br> 
+                                                After crafting my first working script (and no, we're not counting hello world), a deep love for the challenge and reward of development was born.<br>
+                                                Last year I decided to take up web-development, courtesy of a fullstack development course through Udemy, and now I'm taking the skills and
+                                                talents I've acquired through those lessons and my own projects, and offering them to anyone who needs a keen and diligent developer.  
                                         </div> 
                                     </div>
                                      
@@ -78,11 +77,11 @@
                         </div>
                     </div>                        
                 </div>
-                    <div class="carousel-item" data-bs-interval="10000">
+                    <div class="carousel-item" data-bs-interval="20000">
                         <div class="container">
                             <div class="row text-center justify-content-center">
-                            <div class="card col-8 col-sm-12 bg-transparent border-0 vh-75 w-100">
-                                <img src="./assets/images/watercolor-4116932_1280.png" alt="" class="card-img">
+                            <div class="card col-8 col-sm-12 about-card bg-opacity-50 border-2 border-info rounded-5 mh-100 w-100" style="height: 80vh;">
+                                <img src="./assets/images/watercolor-4116932_1280.png" alt="" class="card-img" height="90%">
                                 <div class="card-img-overlay">
                                     <div class="card-title">
                                     <h3 class="display-4">Skills</h3>
@@ -90,12 +89,34 @@
                                     <div class="card-body text-start h-100 w-100 overflow-auto clearfix">
                                         <img src="./assets/images/Thinking-v2.svg" alt="" class="float-end m-3" height="30%" width="30%">
                                         <div class="card-text">
-                                        <p class="opacity-75 pb-3 info">Lorem ipsum dolor sit amet, 
-                                            consectetur adipiscing elit. Mauris gravida risus lectus, non cursus dolor ornare sed. Curabitur sed eleifend dolor. 
-                                            Aliquam varius sem arcu, quis elementum tortor aliquam et. Sed scelerisque, enim non vestibulum molestie, justo erat egestas urna, dictum dictum ex arcu nec enim. 
-                                            Phasellus semper purus nec dolor finibus aliquet. Fusce bibendum egestas turpis vitae malesuada. Aliquam erat volutpat. Etiam cursus dui in velit ultricies aliquet. 
-                                            Etiam ac placerat sapien. Praesent a mauris tellus. In cursus, felis sit amet auctor feugiat, tortor nisl ullamcorper ante, a tempor turpis quam sed nunc. Nullam mi lorem, 
-                                            fringilla in nibh eu, fringilla facilisis ex. Nulla rutrum mauris nec interdum placerat.</p>
+                                            <div class="card-title">
+                                                <h3 class="display-5">Languages</h3>
+                                            </div>
+                                            <ul>
+                                                <li class="info">Python</li>
+                                                <li class="info">JavaScript</li>
+                                                <li class="info">HTML</li>
+                                                <li class="info">CSS</li>
+                                            </ul>
+                                            <div class="card-title">
+                                                <h3 class="display-5">Frameworks & Libraries</h3>
+                                            </div>
+                                            <ul>
+                                                <li class="info">Django</li>
+                                                <li class="info">Node.Js</li>
+                                                <li class="info">Discord.py</li>
+                                                <li class="info">wx.Python</li>
+                                                <li class="info">Bootstrap</li>
+                                            </ul>
+                                            <div class="card-title">
+                                                <h3 class="display-5">Currently Learning</h3>
+                                            </div>
+                                            <ul>
+                                                <li class="info">React.js</li>
+                                                <li class="info">Express.js</li>
+                                                <li class="info">PostgreSQL</li>
+                                                <li class="info">TensorFlow</li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>                                               
@@ -103,24 +124,26 @@
                         </div>    
                     </div>
                     </div>
-                    <div class="carousel-item" data-bs-interval="10000">
+                    <div class="carousel-item" data-bs-interval="20000">
                         <div class="container">
                             <div class="row text-center justify-content-center">
-                                <div class="card col-8 col-sm-12 bg-transparent border-0 vh-50 w-100">
-                                    <img src="./assets/images/watercolor-4116932_1280.png" alt="" class="card-img">
+                                <div class="card col-8 col-sm-12 about-card bg-opacity-50 border-2 border-info rounded-5 mh-100 w-100" style="height: 80vh;">
+                                    <img src="./assets/images/watercolor-4116932_1280.png" alt="" class="card-img" height="90%">
                                     <div class="card-img-overlay">
                                         <div class="card-title">
                                         <h3 class="display-4">Hobbies</h3>
                                         </div>
                                         <div class="card-body text-start h-100 w-100 overflow-auto clearfix">
-                                            <img src="./assets/images/papapishu_guitar_1.svg" alt="" class="float-start " height="40%" width="35%">
+                                            <img src="./assets/images/papapishu_guitar_1.svg" alt="" class="float-start " height="30%" width="30%">
                                             <div class="card-text">
-                                            <p class="opacity-75 pb-3 info">Lorem ipsum dolor sit amet, 
-                                                consectetur adipiscing elit. Mauris gravida risus lectus, non cursus dolor ornare sed. Curabitur sed eleifend dolor. 
-                                                Aliquam varius sem arcu, quis elementum tortor aliquam et. Sed scelerisque, enim non vestibulum molestie, justo erat egestas urna, dictum dictum ex arcu nec enim. 
-                                                Phasellus semper purus nec dolor finibus aliquet. Fusce bibendum egestas turpis vitae malesuada. Aliquam erat volutpat. Etiam cursus dui in velit ultricies aliquet. 
-                                                Etiam ac placerat sapien. Praesent a mauris tellus. In cursus, felis sit amet auctor feugiat, tortor nisl ullamcorper ante, a tempor turpis quam sed nunc. Nullam mi lorem, 
-                                                fringilla in nibh eu, fringilla facilisis ex. Nulla rutrum mauris nec interdum placerat.</p>
+                                            <p class="pb-3 info">
+                                                I like to say I collect hobbies like pokemon.  I'm a self-taught musician, having played guitar for nearly 2 decades.<br>
+                                                Normally, you can find me on weekends competing in local dart tournaments as well, if I'm not singing karaoke.<br>
+                                                When I'm not out and about, or learning new skills, I also enjoy whittling away the hours playing videos games and listening to music.<br>
+                                                A few years ago, I discovered speedcubing as well, and spend some time trying to lower my personal best of 22 seconds.<br>
+                                                I currently work as a service technician, so I enjoy the challenge of finding solutions to difficult problems in my day job as well!<br>
+
+                                            </p>
                                             </div>
                                         </div>
                                     </div>                                   
@@ -145,8 +168,9 @@
     <footer class="footer mt-auto mt-md-3 py-3">
         <div class="container">
             <div class="row justify-content-between align-content-center">
-                <span class="text-body-secondary col-6 align-self-center foot">© Patrick Proctor 2024</span>
-                <div class="col-6">
+                <span class="text-body-secondary col-5 align-self-center foot">© Patrick Proctor 2024</span>
+                <span class="text-body-secondary col-2 align-self-center"><strong>Contact me: </strong></span>
+                <div class="col-5">
                     <h6 class="foot"><img src="./assets/images/telephone-fill.svg" alt="" class="icon"> 531-444-6782</h6>
                     <h6 class="foot"><img src="./assets/images/envelope-paper-fill.svg" alt="" class="icon"> etusnproctor@gmail.com</h6>
                     <h6 class="foot"><img src="./assets/images/github.svg" alt="" class="icon"> Azazel Azure</h6>

@@ -51,7 +51,7 @@ section{
 .info{
     font-family: "Sarabun";
     font-size: 2.75vw;
-    font-weight: 400;
+    font-weight: 600;
 }
 .icon{
     height: 2vw;
@@ -59,7 +59,8 @@ section{
 }
 
 .foot{
-    font-size: 2vw;
+    font-size: 1.5vw;
+    
 }
 
 .pfp{
@@ -71,4 +72,19 @@ section{
     background: linear-gradient(300deg, #1FBDED, #6F1FED, #B82EF0);
     background-size: 180% 180%;
     animation: gradient-animation 18s ease infinite;
+}
+
+.carousel-control-prev{
+    filter: invert(100%);
+}
+.carousel-control-next{
+    filter: invert(100%);
+}
+.carousel-indicators{
+    filter: invert(100%);
+}
+
+.about-card{
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
 }
