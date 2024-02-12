@@ -1,23 +1,23 @@
 
 @font-face {
     font-family: "Nanum Myeongjo";
-    src: url("./assets/Fonts/Nanum_Myeongjo/NanumMyeongjo-ExtraBold.ttf");
+    src: url("/assets/Fonts/Nanum_Myeongjo/NanumMyeongjo-ExtraBold.ttf");
 }
 
 @font-face {
     font-family: "Quicksand";
-    src: url("./assets/Fonts/Quicksand/Quicksand-VariableFont_wght.ttf");
+    src: url("/assets/Fonts/Quicksand/Quicksand-VariableFont_wght.ttf");
 
   }
 
 @font-face {
     font-family: "Sarabun";
-    src: url("./assets/Fonts/Sarabun/Sarabun-Light.ttf");
+    src: url("/assets/Fonts/Sarabun/Sarabun-Light.ttf");
 }
 
 @font-face {
     font-family: "Zilla Slab";
-    src: url("./assets/Fonts/Zilla_Slab/ZillaSlab-Bold.ttf");
+    src: url("/assets/Fonts/Zilla_Slab/ZillaSlab-Bold.ttf");
 }
 
 
@@ -36,7 +36,7 @@ h3{
 }
 
 body{
-    background-image: url(./assets/images/2-blue-watercolor-paint-on-canvas-abstract-art-background-michal-bednarek.jpg); 
+    background-image: url(/assets/images/2-blue-watercolor-paint-on-canvas-abstract-art-background-michal-bednarek.jpg); 
     background-repeat: no-repeat; 
     background-size: cover; 
     background-attachment: fixed;
