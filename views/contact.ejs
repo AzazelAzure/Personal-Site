@@ -1,0 +1,38 @@
+<%- include('partials/header.ejs') %>
+<div class="container-fluid">
+    <div class="container-fluid mt-5">
+        <div class="card cardback2">
+            <div class="row">
+                <div class="col">
+                    <h3 class="goldtext"><u>Want to contact me?</u></h3>
+                    <p class="goldtext"> You can either fill out the from here to send me an email<br>
+                    or you can reach me with any of the methods below.</p>
+                    <ul>
+                        <li class="goldtext"><a href="tel:4029151874"><img src="/assets/images/telephone-fill.svg" alt="a telephone icon" class="pe-2">(402) 915-1874</a></li>
+                        <li class="goldtext"><a href="mailto:contactme@azazelazure.com"><img src="/assets/images/envelope-paper-fill.svg" alt="an email icon" class="pe-2">contactme@azazelazure.com</a></li>
+                        <li class="goldtext"><a href="https://www.github.com/azazelazure"><img src="/assets/images/github.svg" alt="the github icon" class="pe-2">github.com/azazelazure</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <form>
+                        <div class="mb-3">
+                            <label for="usersName" class="form-label goldtext">Enter your name:</label>
+                            <input name="name" type="text" class="form-control" id="usersName" placeholder="Name" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="userEmail" class="form-label goldtext">Enter your email:</label>
+                            <input name="email" type="text" class="form-control" id="userEmail" placeholder="name@example.com" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="userMessage" class="form-label goldtext">Enter your message:</label>
+                            <textarea name="text" class="form-control" id="userMessage" placeholder="Your message here....."></textarea>
+                        </div>
+                        
+                        <input type="submit" value="SUBMIT" class="goldtext sendButton"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('partials/footer.ejs') %>

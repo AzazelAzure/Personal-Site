@@ -20,6 +20,15 @@
     src: url("/assets/Fonts/Zilla_Slab/ZillaSlab-Bold.ttf");
 }
 
+@font-face {
+    font-family: "League Script";
+    src: url("/assets/Fonts/League_Script/LeagueScript-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Pacifico";
+    src: url("/assets/Fonts/Pacifico/Pacifico-Regular.ttf");
+}
 
 h1, .h1{
     font-family: 'Nanum Myeongjo';
@@ -35,17 +44,22 @@ h3{
     font-family: "Zilla Slab";
 }
 
-body{
-    background-image: url(/assets/images/2-blue-watercolor-paint-on-canvas-abstract-art-background-michal-bednarek.jpg); 
-    background-repeat: no-repeat; 
-    background-size: cover; 
-    background-attachment: fixed;
+a:link, a:visited{
+    color: #e6c16a;
 }
 
+nav, .nav{
+    background-color: #332941;
+}
 
-section{
-    padding: 0;
-    margin: 0;
+.goldtext{
+    color: #e6c16a !important;
+}
+
+.sendButton{
+    background-color: #864af9;
+    border-radius: 10%;
+    font-family: 'Zilla Slab';
 }
 
 .info{
@@ -63,14 +77,39 @@ section{
     
 }
 
+.cardback{
+    background-color: #332941 !important;
+    box-shadow: 7px 7px 5px black;
+}
+
+.cardback2{
+    background-color: #332941 !important;
+    box-shadow: -7px 7px 5px black;
+}
+
+.navtext{
+    font-family: 'Pacifico' !important;
+    color: #e6c16a !important;
+    font-weight: 700;
+}
+
+.navdis{
+    font-family: 'Pacifico' !important;
+    font-weight: 700;
+}
+
+.logo{
+    height: 100px;
+    width: 100px;
+}
+
 .pfp{
-    height: 40vw;
-    max-height: 250px;
-    border-radius: 80%;
+    height: 25%;
+    max-height: 300px;
 }
 .gradient-background {
-    background: linear-gradient(300deg, #1FBDED, #6F1FED, #B82EF0);
-    background-size: 180% 180%;
+    background: linear-gradient(300deg, #332941, #3b3486, #864af9);
+    background-size: 20rem 20rem;
     animation: gradient-animation 18s ease infinite;
 }
 
@@ -84,7 +123,7 @@ section{
     filter: invert(100%);
 }
 
-.about-card{
-    --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+.navbar-nav > li > .dropdown-menu{
+    background-color: #332941;
 }
+

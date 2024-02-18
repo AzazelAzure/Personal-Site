@@ -12,10 +12,23 @@ const port = 8000;
 
 // Middleware
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({extended: true}))
 
 // Site handlers
 app.get('/', (req, res)=>{
     res.render(__dirname + '/views/index.ejs');
+})
+
+app.get('/about', (req, res) =>{
+    res.render(__dirname + '/views/about.ejs');
+})
+
+app.get('/contact', (req, res) =>{
+    res.render(__dirname + '/views/contact.ejs')
+})
+
+app.get('/beyond', (req, res)=>{
+    res.redirect('https://www.beyondmed.org');
 })
 
 app.listen(8000, ()=>{

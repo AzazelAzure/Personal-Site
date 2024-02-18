@@ -8,20 +8,39 @@
     </style>
     <title>Patrick Proctor</title>
 </head>
-<body>
-    <nav class="navbar navbar-expand-md">
+<body class="gradient-background">
+    <nav class="navbar navbar-expand-md border-bottom border-black">
         <div class="container-fluid">
-            <button class="navbar-toggler" type="button" id="toggle-menu" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+            <a href="/" class="navbar-brand border-end border-black">
+                <img src="/assets/images/logo.png" alt="azure design logo" class="logo">                
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="menu" aria-labelledby="menu-label">
-                <div class="offcanvas-header">
-                    <a href="/">text</a>
-                </div>
-                <div class="offcanvas-body">
-                    <p>Item 1</p>
-                    <p>item 2</p>
-                </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item px-3 border-end border-black">
+                        <a href="/about" class="nav-link active navtext" aria-current="page"><u>About Me</u></a>
+                    </li>
+                    <li class="nav-item px-3 border-end border-black">
+                        <a href="/blog" class="nav-link disabled navdis "><u>Blog</u></a>
+                    </li>
+                    <li class="nav-item dropdown px-3 border-end border-black">
+                        <a href="#" class="nav-link dropdown-toggle navtext" role="button" data-bs-toggle="dropdown" aria-expanded="false"><u>
+                            Projects
+                        </u>  
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a href="/chess" class="dropdown-item disabled">Chess(Coming Soon)</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="/beyond" class="dropdown-item">Beyond Medical</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item px-3 border-end border-black">
+                        <a href="/contact" class="nav-link navtext"><u>Contact Me</u></a>
+                    </li>
+                    
+                </ul>
             </div>
         </div>
     </nav>
