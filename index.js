@@ -35,4 +35,11 @@ app.listen(8000, ()=>{
     console.log(`Listening on port ${port}`);
 })
 
+app.listen(443, ()=>{
+    console.log(`Listening for HTTPS`)
+})
+
+app.listen(80, ()=>{
+    console.log(`Listening for HTTP`)
+})
 // Functions
