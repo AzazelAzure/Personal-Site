@@ -14,7 +14,7 @@
                     </ul>
                 </div>
                 <div class="col">
-                    <form>
+                    <form action="email" method="POST" id="contact">
                         <div class="mb-3">
                             <label for="usersName" class="form-label goldtext">Enter your name:</label>
                             <input name="name" type="text" class="form-control" id="usersName" placeholder="Name" />
@@ -27,8 +27,18 @@
                             <label for="userMessage" class="form-label goldtext">Enter your message:</label>
                             <textarea name="text" class="form-control" id="userMessage" placeholder="Your message here....."></textarea>
                         </div>
-                        
-                        <input type="submit" value="SUBMIT" class="goldtext sendButton"/>
+                        <button type="submit" class="goldtext sendButton" id="liveToastBtn">Submit</button>
+                        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                              <div class="toast-header toast-headbg border-black">
+                                <strong class="me-auto goldtext">Email recieved!</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                              </div>
+                              <div class="toast-body goldtext toast-bodybg">
+                                Thank you for your message!
+                              </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

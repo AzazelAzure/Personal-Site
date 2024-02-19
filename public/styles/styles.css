@@ -127,3 +127,10 @@ nav, .nav{
     background-color: #332941;
 }
 
+.toast-headbg{
+    background-color: #332941 !important;
+}
+
+.toast-bodybg{
+    background-color: #3b3486;
+}
