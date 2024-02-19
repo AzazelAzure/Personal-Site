@@ -34,8 +34,8 @@ const tranporter = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: 'contactme@azazelazure.com',
-        pass: 'g0fucky0ur$3lf'
+        user: emailUsername,
+        pass: password
     }
 })
 
@@ -83,11 +83,10 @@ app.get('/beyond', (req, res)=>{
 
 app.post('/email', (req, res)=>{
     let message = {
-        from: 'contactme@azazelazure.com',
-        to: 'contactme@azazelazure.com',
-        sender: req.body.email,
-        subject: "Message from " + req.body.name,
-        text: req.body.text,
+        from: emailUsername,
+        to: emailUsername,
+        subject: "Message from " + req.body.name + " " + req.body.email,
+        text: req.body.text 
 
     };
     if (req.xhr || req.headers.accept.indexOf('json') > -1){
