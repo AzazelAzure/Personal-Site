@@ -31,7 +31,7 @@ const emailUsername = process.env.EMAIL_USER
 
 const tranporter = nodemailer.createTransport({
     host:'mail.privateemail.com',
-    port: 587,
+    port: 465,
     secure: true,
     auth: {
         user: emailUsername,
