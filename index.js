@@ -2,7 +2,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, format } from 'url';
 import fs from 'fs';
 import https from 'https';
 import nodemailer from 'nodemailer';
@@ -31,7 +31,7 @@ const emailUsername = process.env.EMAIL_USER
 
 const tranporter = nodemailer.createTransport({
     host:'mail.privateemail.com',
-    port: 465,
+    port: 587,
     secure: true,
     auth: {
         user: emailUsername,
@@ -46,11 +46,13 @@ const { combine, timestamp, prettyPrint, label } = winston.format;
 
 const logger = winston.createLogger({
     format: combine(
-        timestamp(),
-        prettyPrint(),
+        format.errors({stack:true}),
+        timestamp(), 
         winston.format.splat(),
         label({label:'Time since last log'}),
         winston.format.ms(),
+        prettyPrint(),
+       
     ),
     transports: [
         new winston.transports.File({filename: 'combined.log'}),
