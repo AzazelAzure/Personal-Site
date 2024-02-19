@@ -8,7 +8,7 @@ import { fileURLToPath } from 'url';
 // Declare Constants
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const port = 8000;
+const port = 3000;
 
 // Middleware
 app.use(express.static('public'));
@@ -31,15 +31,8 @@ app.get('/beyond', (req, res)=>{
     res.redirect('https://www.beyondmed.org');
 })
 
-app.listen(8000, ()=>{
+app.listen(3000, ()=>{
     console.log(`Listening on port ${port}`);
 })
 
-app.listen(443, ()=>{
-    console.log(`Listening for HTTPS`)
-})
-
-app.listen(80, ()=>{
-    console.log(`Listening for HTTP`)
-})
 // Functions
