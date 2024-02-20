@@ -47,7 +47,6 @@ const { combine, timestamp, prettyPrint, label } = winston.format;
 
 const logger = winston.createLogger({
     format: combine(
-        format.errors({stack:true}),
         timestamp(), 
         winston.format.splat(),
         label({label:'Time since last log'}),
