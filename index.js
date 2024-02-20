@@ -20,7 +20,8 @@ const hostname = process.env.IP_ADDRESS
 
 const options = {
     key: fs.readFileSync('private.key'), 
-    cert: fs.readFileSync('certificate.crt')
+    cert: fs.readFileSync('certificate.crt'),
+    ca: fs.readFileSync('www_azazelazure_com.ca-bundle')
 }
 
 const httpsServer = https.createServer(options, app);
