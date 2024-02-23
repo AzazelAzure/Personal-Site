@@ -7,38 +7,39 @@ import fs from 'fs';
 import https from 'https';
 import nodemailer from 'nodemailer';
 import winston from 'winston';
+import {Chess} from 'chess.js';
 
 // App constants
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-//const port = 3000;
+const port = 3000;
 
 //HTTPs Constants
-const httpsPort = 443;
-const hostname = process.env.IP_ADDRESS
+// const httpsPort = 443;
+// const hostname = process.env.IP_ADDRESS
 
-const options = {
-    key: fs.readFileSync('private.key'), 
-    cert: fs.readFileSync('certificate.crt'),
-    ca: fs.readFileSync('www_azazelazure_com.ca-bundle')
-}
+// const options = {
+//     key: fs.readFileSync('private.key'), 
+//     cert: fs.readFileSync('certificate.crt'),
+//     ca: fs.readFileSync('www_azazelazure_com.ca-bundle')
+// }
 
-const httpsServer = https.createServer(options, app);
+// const httpsServer = https.createServer(options, app);
 
 //Email forwarding constants
-const password = process.env.EMAIL_PASSWORD
-const emailUsername = process.env.EMAIL_USER
+// const password = process.env.EMAIL_PASSWORD
+// const emailUsername = process.env.EMAIL_USER
 
-const tranporter = nodemailer.createTransport({
-    host:'mail.privateemail.com',
-    port: 465,
-    secure: true,
-    auth: {
-        user: emailUsername,
-        pass: password
-    }
-})
+// const tranporter = nodemailer.createTransport({
+//     host:'mail.privateemail.com',
+//     port: 465,
+//     secure: true,
+//     auth: {
+//         user: emailUsername,
+//         pass: password
+//     }
+// })
 
 
 
@@ -60,8 +61,6 @@ const logger = winston.createLogger({
     ]
 });
 
-
-
 // Middleware
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}))
@@ -81,6 +80,10 @@ app.get('/contact', (req, res) =>{
 
 app.get('/beyond', (req, res)=>{
     res.redirect('https://www.beyondmed.org');
+})
+
+app.get('/chess', (req, res) =>{
+    res.render(__dirname + '/views/chess.ejs');
 })
 
 app.post('/email', (req, res)=>{
@@ -109,24 +112,22 @@ app.post('/email', (req, res)=>{
     }) 
     } else{
         res.render(__dirname + '/views/contact.ejs');
-    }
-    
-    
+    }  
 })
 
-// app.listen(3000, ()=>{
-//     console.log(`Listening on port ${port}`)
-//     logger.log({
-//         level: 'info',
-//         message: `Server started`
-//     });
-// })
-
-httpsServer.listen(httpsPort, hostname, ()=>{
+app.listen(3000, ()=>{
+    console.log(`Listening on port ${port}`)
     logger.log({
         level: 'info',
-        message: 'Server started'
-    })
-});
+        message: `Server started`
+    });
+})
+
+// httpsServer.listen(httpsPort, hostname, ()=>{
+//     logger.log({
+//         level: 'info',
+//         message: 'Server started'
+//     })
+// });
 
 // Functions
