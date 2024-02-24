@@ -17,4 +17,4 @@ combined.log
 error.log
 
 # env
-.env/
+.env
