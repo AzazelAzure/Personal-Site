@@ -15,3 +15,6 @@ node_modules/
 # logs
 combined.log
 error.log
+
+# env
+.env/
