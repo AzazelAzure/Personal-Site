@@ -6,15 +6,18 @@ import { fileURLToPath, format } from 'url';
 import fs from 'fs';
 import https from 'https';
 import winston from 'winston';
+import {Chess} from 'chess.js';
+import cors from 'cors';
 import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
-import 'dotenv/config'
+import 'dotenv/config';
 
 
 // App constants
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const CHESS_API = process.env.CHESS_API
 
-//const port = 3000;
+// const port = 3000;
 
 //HTTPs Constants
 const httpsPort = 443;
@@ -55,11 +58,10 @@ const logger = winston.createLogger({
     ]
 });
 
-
-
 // Middleware
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(cors())
 
 // Site handlers
 app.get('/', (req, res)=>{
@@ -76,6 +78,16 @@ app.get('/contact', (req, res) =>{
 
 app.get('/beyond', (req, res)=>{
     res.redirect('https://www.beyondmed.org');
+})
+
+app.get('/chess', (req, res) =>{
+    res.render(__dirname + '/views/chess.ejs', {chess: true});
+})
+
+app.get('/newGame', (req, res)=>{
+    const chess = new Chess();
+    const position = chess.fen()
+    res.json({board: position, api: CHESS_API})
 })
 
 app.post('/email', async (req, res)=>{

@@ -1,5 +1,4 @@
-// import { error } from "winston";
-
+// Email handler
 $(document).ready(function() { 
     $('#contact').submit(function(event) { 
         event.preventDefault(); 
