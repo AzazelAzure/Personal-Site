@@ -87,7 +87,7 @@ app.get('/chess', (req, res) =>{
 app.get('/newGame', (req, res)=>{
     const chess = new Chess();
     const position = chess.fen()
-    res.json({board: position, api: CHESS_API})
+    res.json({board: position})
 })
 
 app.post('/email', async (req, res)=>{
@@ -118,6 +118,61 @@ app.post('/email', async (req, res)=>{
 		res.status(500).json({success: false, message: 'Error sending message'});
 	}
 });
+
+// chess handlers
+app.post('/gameStatus', bodyParser.json(), (req, res)=>{
+    const chess = new Chess(req.body.fen);
+    const status = {
+        turn: chess.turn(),
+        gameover: chess.isGameOver(),
+        check: chess.isCheck(),
+        checkmate: chess.isCheckmate(),
+        draw: chess.isDraw(),
+        stalemate: chess.isStalemate(),
+        insufficient: chess.isInsufficientMaterial(),
+        threefold: chess.isThreefoldRepetition()
+    };
+    res.json(status);
+})
+
+app.post('/validMoves', bodyParser.json(), (req, res)=>{
+    const chess = new Chess(req.body.fen);
+    const moves = chess.moves({
+        square: req.body.square,
+        verbose: true
+    });
+    res.json({moves: moves})
+})
+
+app.post('/getPiece', bodyParser.json(), (req, res)=>{
+    const chess = new Chess(req.body.fen);
+    const piece = chess.get(req.body.square);
+    if (piece != null){
+        res.json({
+            piece: piece.type,
+            turn: chess.turn(),
+            color: piece.color
+        })
+    } else{
+        res.json({piece: piece})
+    }
+})
+
+app.post('/movePiece', bodyParser.json(), (req, res)=>{
+    const chess = new Chess(req.body.fen);
+    try{
+        const move = chess.move({
+        from: req.body.from,
+        to: req.body.to
+        })
+        const position = chess.fen()
+        res.send({move: move, fen: position})
+    } catch(error){
+        const move = null;
+        const position = chess.fen()
+        res.send({move:move, fen:position})
+    }
+})
 
 // app.listen(3000, ()=>{
 //     console.log(`Listening on port ${port}`)

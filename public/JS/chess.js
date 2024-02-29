@@ -11,7 +11,6 @@ var legalSquare = '#f9d77e'
 var captureSquare = '#ff2400'
 var board1 = Chessboard('board1', boardconfig)
 var fen;
-var api;
 
 
 $('#startGame').on('click', async ()=>{
@@ -22,7 +21,6 @@ $('#startGame').on('click', async ()=>{
 
     // Set local fen to fen response and grab api
     fen = response.board;
-    api = response.api;
 
     // Set positions to starting positions
     board1.start();
@@ -31,7 +29,7 @@ $('#startGame').on('click', async ()=>{
 async function onDragStart(source, piece, position, orientation){
     data = {fen: fen}
     try{
-        const status = await fetch(api+'/gameStatus', {
+        const status = await fetch('/gameStatus', {
         method: 'POST',
         headers:{
             "Content-Type": "application/json",
@@ -50,7 +48,7 @@ async function onDragStart(source, piece, position, orientation){
         }
 
         data.square = source;
-        const getValid = await fetch(api+'/validMoves', {
+        const getValid = await fetch('/validMoves', {
             method: 'POST',
             headers:{
                 "Content-Type" : "application/json"
@@ -74,7 +72,7 @@ async function onDragStart(source, piece, position, orientation){
 async function onDrop(source, target, piece, newPos, oldPod, orientation){
     data = {fen: fen, from: source, to: target}
     try{
-        const result = await fetch(api+'/movePiece', {
+        const result = await fetch('/movePiece', {
         method: 'POST',
         headers:{
             'Content-Type':'application/json'
@@ -102,7 +100,7 @@ async function onSnapEnd(){
 
 async function highlightSquare(square){
     data = {fen: fen, square: square}
-    const result = await fetch(api+'/getPiece', {
+    const result = await fetch('/getPiece', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
