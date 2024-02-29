@@ -1,5 +1,3 @@
-
-
 var boardconfig ={
     sparePieces : true,
     onDragStart : onDragStart,
@@ -31,73 +29,86 @@ $('#startGame').on('click', async ()=>{
 })
 
 async function onDragStart(source, piece, position, orientation){
-    console.log(`Current position: ${board1.fen()}`)
-    console.log(`Current orientation: ${orientation} `)
-    console.log(`Current source: ${source}`)
-    console.log(`Current fen: ${fen}`)
     data = {fen: fen}
-    console.log('Current Data: ', data)
-    console.log('Data fen type: ', typeof(data.fen))
-    const status = await fetch('/gameStatus', {
+    try{
+        const status = await fetch(api+'/gameStatus', {
         method: 'POST',
         headers:{
             "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
-    });
-    const response = await status.json();
-    console.log('DragStatus response: ', response)
-    if ((response.turn === 'w' && piece.search(/^b/) !== -1) || (response.turn === 'b' && piece.search(/^w/) !== -1)){
-        return false
-    };
+        });
 
-    if (response.gameover === true){
-        return false
-    }
-    data = {fen: fen, square: source}
-    const getValid = await fetch('/validMoves', {
-        method: 'POST',
-        headers:{
-            "Content-Type" : "application/json"
-        },
-        body: JSON.stringify(data)
-    });
-    const validResp = await getValid.json();
-    const moves = validResp.moves
-    console.log(moves)
-    // if (moves.length === 0){ return false}
-    // highlightSquare(source)
-    // for (let i = 0; i < moves.length; i++){
-    //     highlightSquare(moves[i].to)
-    // }
-}
+        const response = await status.json();
 
-function onDrop(source, target, piece, newPosition, oldPosition, orientation){
-    var move = game.move({
-        from: source,
-        to: target,
-        promotion: 'q' //Update this later with a function that shows a miniture board that allows selecting what to promote to
-    })
+        if ((response.turn === 'w' && piece.search(/^b/) !== -1) || (response.turn === 'b' && piece.search(/^w/) !== -1)){
+            return false
+        };
 
-    if (move === null){
-        return 'snapback'
+        if (response.gameover === true){
+            return false
+        }
+
+        data.square = source;
+        const getValid = await fetch(api+'/validMoves', {
+            method: 'POST',
+            headers:{
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+        const validResp = await getValid.json();
+        const moves = validResp.moves
+
+        if (moves.length === 0){ return false}
+        highlightSquare(source)
+        for (let i = 0; i < moves.length; i++){
+            highlightSquare(moves[i].to)
+        }
+    } catch(error){
+        console.log('Error occured: ', error)
     }
     
 }
 
-function onSnapEnd(){
-    board1.position(game.fen());
+async function onDrop(source, target, piece, newPos, oldPod, orientation){
+    data = {fen: fen, from: source, to: target}
+    try{
+        const result = await fetch(api+'/movePiece', {
+        method: 'POST',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body: JSON.stringify(data)
+        });
+        const response = await result.json();
+
+        if (response.move === null){
+            console.log('Resolved null')
+            board1.position(fen);
+        };
+        fen = response.fen
+
+    } catch(error){
+        console.log('Error occured: ', error)
+    }
+    
+}
+
+async function onSnapEnd(){
     removeHighlight();
     return
 }
 
 async function highlightSquare(square){
-    postConfig.body = JSON.stringify({
-        fen : board1.fen(),
-        square: square
-    })
-    console.log(postConfig)
-    const result = await fetch('/getPiece', postConfig)
+    data = {fen: fen, square: square}
+    const result = await fetch(api+'/getPiece', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
     const response = await result.json();
     var $square = $('#board1 .square-' + square);
     var background = legalSquare;

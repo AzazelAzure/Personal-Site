@@ -8,11 +8,12 @@ import https from 'https';
 import nodemailer from 'nodemailer';
 import winston from 'winston';
 import {Chess} from 'chess.js';
+import cors from 'cors';
 
 // App constants
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const CHESS_API = 'http:localhost:3001'
+const CHESS_API = 'http://localhost:3001'
 
 const port = 3000;
 
@@ -65,6 +66,7 @@ const logger = winston.createLogger({
 // Middleware
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}))
+app.use(cors())
 
 // Site handlers
 app.get('/', (req, res)=>{
