@@ -8,8 +8,9 @@ $(document).ready(function() {
             url: '/email', 
             data: $(this).serialize(), 
             success: function(response) { // Handle response
-                console.log(`Success reponse: ${response}`)
-                if (response.success) {
+			response = JSON.stringify(response);
+			console.log(response);
+                if (response) {
                     $('#liveToast').toast('show')
                 } else {
                     alert('There was a problem submitting the form.');

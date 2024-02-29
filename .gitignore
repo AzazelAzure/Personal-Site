@@ -16,4 +16,9 @@ node_modules/
 combined.log
 error.log
 
+<<<<<<< HEAD
 
+=======
+# env
+.env
+>>>>>>> 5cdb04a4a8e20e3ccba93de878ce57320db3a0d3
