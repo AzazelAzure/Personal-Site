@@ -1,7 +1,9 @@
 <%- include('partials/header.ejs') %>
+<% if (locals.chess){ %>
 <div class=" container-fluid">
-    <div id="board1" style="width: 400px;"></div>
+    <div id="board1" style="width: 400px;"></div>\
+    <button type="button" id="startGame">Start</button>
 </div>
-
+<% } %>
 
 <%- include('partials/footer.ejs') %>

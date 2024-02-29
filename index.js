@@ -12,6 +12,7 @@ import {Chess} from 'chess.js';
 // App constants
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const CHESS_API = 'http:localhost:3001'
 
 const port = 3000;
 
@@ -83,7 +84,13 @@ app.get('/beyond', (req, res)=>{
 })
 
 app.get('/chess', (req, res) =>{
-    res.render(__dirname + '/views/chess.ejs');
+    res.render(__dirname + '/views/chess.ejs', {chess: true});
+})
+
+app.get('/newGame', (req, res)=>{
+    const chess = new Chess();
+    const position = chess.fen()
+    res.json({board: position, api: CHESS_API})
 })
 
 app.post('/email', (req, res)=>{
